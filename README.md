@@ -1,6 +1,7 @@
 # PlagiarismDetector
-CMOS: A Lexical Analysis Tool for Plagiarism Detection
-Overview
+CMOS is a Lexical Analysis Tool for Plagiarism Detection
+
+**Overview**
 This project demonstrates how to use FLEX for lexical analysis to detect potential plagiarism in student assignments. The process follows a method similar to MOSS (Measure Of Software Similarity). The main steps are:
 
 Tokenization: Student programs are tokenized, removing all irrelevant features that can be changed to hide plagiarism, such as variable names, comments, whitespace, etc.
