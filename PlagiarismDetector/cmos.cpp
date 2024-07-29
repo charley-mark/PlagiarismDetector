@@ -116,6 +116,5 @@ int main() {
     for (const auto& pairPercentage : pairPercentages) {
         cout << "Pair (" << pairPercentage.second.first << ", " << pairPercentage.second.second << "): Shared Fingerprints = " << pairPercentage.first * 100 << "%\n";
     }
-
     return 0;
 }
