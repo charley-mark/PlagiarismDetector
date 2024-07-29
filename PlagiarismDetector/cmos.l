@@ -1,8 +1,6 @@
 %{
 //*****************************************************************************************
-//  @author : Mark Tetteh
-//
-//
+// @author : Mark Tetteh
 // File: cmos.l
 // Purpose: To scan through C code files and tokenize significant elements for plagiarism
 // detection. This lexer aims to capture keywords, operators, numbers, and specific patterns
