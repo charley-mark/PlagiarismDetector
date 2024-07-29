@@ -6,7 +6,7 @@ This project demonstrates how to use FLEX for lexical analysis to detect potenti
 Tokenization: Student programs are tokenized, removing all irrelevant features that can be changed to hide plagiarism, such as variable names, comments, whitespace, etc.
 Fingerprint Creation: Digital "fingerprints" are created for each program based on the tokenized code.
 Comparison: Pairs of programs are compared based on the number of matching fingerprints. A higher number of matching fingerprints indicates potential plagiarism.
-The program developed in this project is called CMOS, a MOSS-like program that works on C code. It takes a single command line argument, which is the name of the directory containing student examples.
+The program developed in this project is called CMOS, a MOSS-like program that works on C code. It takes a single command line argument, which is the name of the directory containing student Examples.
 
 **Components**
 1. cmos.l : A LEX program to parse and tokenize a student submission.

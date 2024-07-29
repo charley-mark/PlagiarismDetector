@@ -1,0 +1,49 @@
+#!/bin/bash
+
+# Check if a directory is provided
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 <directory>"
+    exit 1
+fi
+
+# Check if the directory exists
+if [ ! -d "$1" ]; then
+    echo "Directory $1 not found."
+    exit 1
+fi
+
+# Remove any existing tokens.txt
+rm -f tokens.txt
+
+# Get the list of C files in the directory
+FILES=$(find "$1" -type f -name "*.c")
+
+# Iterate over each C file in the directory
+for f in $FILES
+do
+    echo "Tokenizing ${f} file..."
+    # Check if the file is readable
+    if [ ! -r "$f" ]; then
+        echo "File ${f} is not readable."
+        continue
+    fi
+    
+    # Tokenize the file using the scanner program
+    ./scanner "$f" >> tokens.txt
+
+    echo "" >> tokens.txt
+done
+
+# Check if tokens.txt is created
+if [ ! -f "tokens.txt" ]; then
+    echo "Failed to create tokens.txt"
+    exit 1
+fi
+
+# Perform plagiarism detection using cmos
+echo "Detecting Plagiarism, this may take a few minutes."
+./cmos < tokens.txt > PlagiarismReport.txt
+echo "Done. Results stored in PlagiarismReport.txt"
+
+# End the script
+exit 0
